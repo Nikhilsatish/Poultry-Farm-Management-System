@@ -1,0 +1,23 @@
+<div class = "container">
+    <table class = "table table-striped table-bordered">
+        <tr style = "background: lightblue;">
+            <th>BIRD ID</th>
+            <th>BIRD DATE</th>
+            <th>BIRD QUANTITY</th>
+            <th>BIRD AMOUNT</th>
+        </tr>
+        <tr *ngFor = "let bird of birds">
+            <td>{{bird.bird_id}}</td>
+            <td>{{bird.bird_date}}</td>
+            <td>{{bird.bird_qty}}</td>
+            <td>{{bird.bird_amt}}</td>
+        </tr>
+        <tr *ngIf = "!birds">
+            <td colspan = "3">Loading... Please wait....</td>
+        </tr>
+        <tr *ngIf = "birds && birds.length == 0">
+            <td colspan = "3">No records found!</td>
+        </tr>
+
+    </table>
+</div>
